@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.slick-prev:before{
+    visibility: hidden;
+}
+.slick-next:before {
+    visibility: hidden;
+}
+
+.slick-slide > div{
+    margin: 0 20px;
+}
+.slick-dots > li{
+    background: white;
+    width: 40px;
+    border-radius: 10px;
+    height: 8px;
+}
+.slick-dots > button{
+  
+    width: 40px;
+    border-radius: 10px;
+    height: 8px;
+}
+.slick-dots {
+    bottom: -100px;
+}
+.slick-dots li button:before{
+    top: -5px;
+    width: 40px !important; 
+    color: white;
+    
+}
+.hero {
+    background: linear-gradient(270deg, #DF8908 10%, #B415FF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.one{
+    background: linear-gradient(270deg, #DF8908 10%, #B415FF 100%);
+}
+.slick-dots li.slick-active button:before {
+    color: #B415FF;
+    width: 50px;
+}
