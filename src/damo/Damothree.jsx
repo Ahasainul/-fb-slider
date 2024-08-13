@@ -4,9 +4,13 @@ import { AiFillLike } from "react-icons/ai";
 import { FaCommentAlt, FaShareAlt } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa6";
 import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 import Slider from "react-slick";
+import Privearrows from "../icons/Privearrows";
+import Nextarrow from "../icons/Nextarrow";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const data = [
   {
     id: 1,
@@ -39,32 +43,40 @@ const data = [
     dat: "Sep 06 2023",
   },
 ];
-const DemoTow = () => {
-  const settings = {
+const Damothree = () => {
+  var settings = {
     dots: true,
-    autoplay: true,
-    speed: 3000,
-    autoplaySpeed: 5000,
-    cssEase: "linear",
     infinite: true,
-    speed: 1000,
+    speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    prevArrow: <Privearrows />,
+    nextArrow: <Nextarrow />,
+    rtl: true,
   };
+  React.useEffect(() => {
+    AOS.init({
+      offset: 100,
+      duration: 800,
+      easing: "ease-in-out-sine",
+      delay: 100,
+    });
+    AOS.refresh();
+  }, []);
   return (
     <>
-      <div className=" one py-20">
+      <div className="py-20 bg-black">
         <div className="">
-          <h1 className="text-center pt-10 font-bold text-white font-sans text-3xl pb-20">
+          <h1 className="text-center pt-10 font-bold text-white   text-3xl pb-20">
             Carousel Demo - 2
           </h1>
         </div>
-        <div className=" w-[1450px] mx-auto pb-20">
+        <div className=" gap-5 py-20  w-[1450px] mx-auto   ">
           <Slider {...settings}>
             {data.map((itms) => (
-              <div data-aos="fade-up" className="w-[350px] group ">
-                <div className="group-hover:scale-105 transition-all ">
-                  <div className="p-5 bg-white  rounded-lg ">
+              <div className="w-[350px] group  ">
+                <div className=" transition-all ">
+                  <div className="p-5 one  rounded-lg ">
                     <div className="flex justify-between">
                       <div className="flex gap-3 pb-5">
                         <img
@@ -73,10 +85,20 @@ const DemoTow = () => {
                           alt=""
                         />
                         <div className="pb-2">
-                          <h2 className="font-bold text-lg text-blue-900">
+                          <h2
+                            data-aos="fade-up"
+                            data-aos-duration="500"
+                            data-aos-dalay="300"
+                            className="font-bold text-lg text-white"
+                          >
                             {itms.had}
                           </h2>
-                          <p className="hero text-[14px] font-semibold">
+                          <p
+                            data-aos="fade-up"
+                            data-aos-duration="500"
+                            data-aos-dalay="300"
+                            className=" text-white text-[14px] font-semibold"
+                          >
                             {itms.dat}
                           </p>
                         </div>
@@ -91,17 +113,24 @@ const DemoTow = () => {
                       </div>
                     </div>
                     <div className="">
-                      <p className="py-3 text-gray-400 text-sm">{itms.title}</p>
+                      <p
+                        data-aos="fade-up"
+                        data-aos-duration="500"
+                        data-aos-dalay="300"
+                        className="py-3    text-white text-sm"
+                      >
+                        {itms.title}
+                      </p>
                       <div className=" flex justify-between items-center">
                         <div className="flex gap-2 items-center">
-                          <p className="hero text-base font-semibold">
-                            See More
+                          <p className=" text-whitetext-base font-semibold">
+                            See More{" "}
                           </p>
                           <FaArrowRight className="text-gray-400 text-base mt-1" />
                         </div>
 
                         <div className="bg-slate-300 h-8 flex items-center w-8 rounded-lg ">
-                          <FaShareAlt className=" mx-auto text-sm text-gray-400" />
+                          <FaShareAlt className=" mx-auto text-sm text-white" />
                         </div>
                       </div>
                     </div>
@@ -116,4 +145,4 @@ const DemoTow = () => {
   );
 };
 
-export default DemoTow;
+export default Damothree;

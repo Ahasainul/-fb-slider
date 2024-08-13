@@ -12,6 +12,8 @@ import "slick-carousel/slick/slick.css";
 import Slider from "react-slick";
 import Privearrows from "../icons/Privearrows";
 import Nextarrow from "../icons/Nextarrow";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const data = [
   {
     id: 1,
@@ -50,20 +52,30 @@ const Damoone = () => {
   var settings = {
     
     infinite: true,
-    speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
     prevArrow: <Privearrows />,
     nextArrow: <Nextarrow />,
     rtl: true,
   };
+  React.useEffect(() => {
+    AOS.init({
+      offset: 100,
+      duration: 800,
+      easing: "ease-in-out-sine",
+      delay: 100,
+    });
+    AOS.refresh();
+  }, []);
   return (
     <>
     {/* demo one start  */}
       <div className="bg-[#F7F7F7]">
         <div className="w-[1450px] mx-auto ">
        <div className=" ">
-       <h1 className="text-center pt-10 font-bold font-sans text-3xl ">
+       <h1  data-aos="zoom-out"
+                      data-aos-duration="500"
+                      data-aos-once="true" className="text-center pt-10 font-bold font-sans text-3xl ">
             Carousel Demo - 1
           </h1>
        </div>
@@ -82,10 +94,14 @@ const Damoone = () => {
                             alt=""
                           />
                           <div className="pb-2">
-                            <h2 className="font-bold text-lg text-blue-900">
+                            <h2 data-aos="fade-up"
+                      data-aos-duration="500"
+                      data-aos-dalay="300" className="font-bold text-lg text-blue-900">
                               {itms.had}
                             </h2>
-                            <p className="text-gray-400 text-[14px] font-semibold">
+                            <p data-aos="fade-up"
+                      data-aos-duration="500"
+                      data-aos-dalay="300" className="text-gray-400 text-[14px] font-semibold">
                               {itms.dat}
                             </p>
                           </div>
@@ -100,7 +116,9 @@ const Damoone = () => {
                         </div>
                       </div>
                       <div className="">
-                        <p className="py-3 text-gray-400 text-sm">
+                        <p data-aos="fade-up"
+                      data-aos-duration="500"
+                      data-aos-dalay="300" className="py-3 hero text-sm">
                           {itms.title}
                         </p>
                         <div className=" flex justify-between items-center">
@@ -117,7 +135,10 @@ const Damoone = () => {
                         </div>
                       </div>
                     </div>
-                    <img
+                    <img 
+                     data-aos="zoom-out"
+                     data-aos-duration="500"
+                     data-aos-once="true" 
                       className="w-full h-[270px]  rounded-b-lg"
                       src={itms.img}
                       alt=""

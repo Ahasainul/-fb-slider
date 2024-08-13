@@ -18,11 +18,20 @@
     border-radius: 10px;
     height: 8px;
 }
-.slick-dots > button{
+.slick-dots li button{
   
     width: 40px;
     border-radius: 10px;
     height: 8px;
+    opacity: 0;
+}
+.slick-dots li button:hover{
+  
+    width: 40px;
+    color: #DF8908;
+    border-radius: 10px;
+    height: 8px;
+    opacity: 0;
 }
 .slick-dots {
     bottom: -100px;
@@ -30,9 +39,11 @@
 .slick-dots li button:before{
     top: -5px;
     width: 40px !important; 
-    color: white;
+   
+    
     
 }
+
 .hero {
     background: linear-gradient(270deg, #DF8908 10%, #B415FF 100%);
     background-clip: text;

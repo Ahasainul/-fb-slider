@@ -3,7 +3,7 @@ const Nextarrow = (props) => {
   const { className, onClick } = props;
   return (
     <div
-      className={`top-1/2 right-[-70px] absolute translate-y-[-50%] z-10 ${className}  `}
+      className={`top-[40%] right-[-70px] absolute translate-y-[-50%] z-10 ${className}  `}
       onClick={onClick}
     >
       <svg
